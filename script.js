@@ -1,27 +1,27 @@
 //valeur de base
-let n1 = 0;
-let n2 = 0;
+let n1 = "";
+let n2 = "";
 let operator = "";
 
 //operation
 const add = function(n1, n2) {
     console.log(n1 + n2);
-	return n1 + n2;
+	return Number(n1) + Number(n2);
 };
 
 const subtract = function(n1, n2) {
     console.log(n1 - n2);
-	return n1 - n2;
+	return Number(n1) - Number(n2);
 };
 
 const multiply = function(n1, n2) {
     console.log(n1 * n2);
-    return n1 * n2
+    return Number(n1) * Number(n2);
 };
 
 const divide = function(n1, n2) {
     console.log(n1 / n2);
-    return n1 / n2
+    return Number(n1) / Number(n2);
 };
 
 const operate = function(n1,n2,operator){
@@ -34,7 +34,7 @@ const operate = function(n1,n2,operator){
     else if (operator === "/")
         return divide(n1,n2);
     else
-        return "ERROR"
+        return n1;
 }
 
 //variable liee aux boutons
@@ -58,12 +58,14 @@ const bClear = document.querySelector('#bClear')
 //evenement apres click sur bouton
 b1.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 1;
+        n1 += "1";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 1;
+        n2 += "1";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -71,12 +73,14 @@ b1.addEventListener("click",()=>{
 
 b2.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 2;
+        n1 += "2";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 2;
+        n2 += "2";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -84,12 +88,14 @@ b2.addEventListener("click",()=>{
 
 b3.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 3;
+        n1 += "3";
         console.log("n1 = ",n1);
+        screen.textContent = n1;
         return;
     }
     else{
-        n2 = 3;
+        n2 += "3";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -97,12 +103,14 @@ b3.addEventListener("click",()=>{
 
 b4.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 4;
+        n1 += "4";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 4;
+        n2 += "4";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -110,12 +118,14 @@ b4.addEventListener("click",()=>{
 
 b5.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 5;
+        n1 += "5";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 5;
+        n2 += "5";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -123,12 +133,14 @@ b5.addEventListener("click",()=>{
 
 b6.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 6;
+        n1 += "6";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 6;
+        n2 += "6";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -136,12 +148,14 @@ b6.addEventListener("click",()=>{
 
 b7.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 7;
+        n1 += "7";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 7;
+        n2 += "7";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -149,12 +163,14 @@ b7.addEventListener("click",()=>{
 
 b8.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 8;
+        n1 += "8";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 8;
+        n2 += "8";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
@@ -162,57 +178,95 @@ b8.addEventListener("click",()=>{
 
 b9.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 9;
+        n1 += "9";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 9;
+        n2 += "9";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
 })
 b0.addEventListener("click",()=>{
     if(operator ===""){
-        n1 = 0;
+        n1 += "0";
+        screen.textContent = n1;
         console.log("n1 = ",n1);
         return;
     }
     else{
-        n2 = 0;
+        n2 += "0";
+        screen.textContent = n2;
         console.log("n2 = ",n2);
         return;
     }
 })
 bPlus.addEventListener("click",()=>{
+    if (n2 !== "" && operator !== ""){
+        screen.textContent = (operate(n1,n2,operator));
+        n1 =operate(n1,n2,operator);
+        n2 = "";
+        operator = "+";
+        return;
+    }
     operator = "+";
     console.log("operator = ",operator);
     return;
 })
 bMinus.addEventListener("click",()=>{
+    if (n2 !== "" && operator !== ""){
+        screen.textContent = (operate(n1,n2,operator));
+        n1 =operate(n1,n2,operator);
+        n2 = "";
+        operator = "-";
+        return;
+    }
     operator = "-";
     console.log("operator = ",operator);
     return;
 })
 bMul.addEventListener("click",()=>{
+    if (n2 !== "" && operator !== ""){
+        screen.textContent = (operate(n1,n2,operator));
+        n1 =operate(n1,n2,operator);
+        n2 = "";
+        operator = "*";
+        return;
+    }
     operator = "*";
     console.log("operator = ",operator);
     return;
 })
 bDiv.addEventListener("click",()=>{
+    if (n2 !== "" && operator !== ""){
+        screen.textContent = (operate(n1,n2,operator));
+        n1 =operate(n1,n2,operator);
+        n2 = "";
+        return;
+    }
     operator = "/";
     console.log("operator = ",operator);
     return;
 })
 bEgal.addEventListener("click",()=>{
-    console.log(n1,n2,operator);
-    console.log(operate(n1,n2,operator))
+    screen.textContent = (operate(n1,n2,operator));
+    n1 =operate(n1,n2,operator);
+    n2 = "";
+    operator = "";
     return;
 })
 bClear.addEventListener("click",()=>{
-    n1 = 0;
-    n2 = 0;
+    n1 = "";
+    n2 = "";
     operator = "";
-    console.log("CLEAR");
+    screen.textContent = "CLEAR";
     return;
 })
+
+//ecrand
+const screen = document.querySelector('#ecrand');
+
+screen.textContent = 0;
