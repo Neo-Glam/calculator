@@ -16,14 +16,16 @@ body{
 }
 
 #ecrand{
-    width: 390px;
+    display: flex;
+    width: 380px;
     height: 100px;
     margin-top: 15px;
     margin-bottom:15px ;
     border: solid;
     border-color: black;
     background-color: #DBFEB8;
-     font-size: xx-large;
+    font-size: 80px;
+    direction: rtl
 }
 
 #clavier{
@@ -37,7 +39,12 @@ body{
 button{
     background-color: #C5EDAC;
     width: 24%;
-    font-size: larger;
-    border-radius: 13%;
+    font-size: 50px;
+    border-radius: 18%;
     margin: 0.5%;
+    transition-duration: 0.3s;
 }
+
+button:hover {
+    background-color: #6ea84a; /* Green */
+  }
